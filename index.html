@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the team at Prometheus, a highly skilled and innovative collective igniting the future of technology and design.">
+    <title>Prometheus - Igniting Innovation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Canvas for Flame Sparks/Embers -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Splash Screen (Front Page) -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-panel splash-left"></div>
+        <div class="splash-panel splash-right"></div>
+        <div class="splash-content">
+            <div class="splash-logo-container">
+                <img src="Pics/Prometheus_LOGO.jpeg" alt="Prometheus Emblem" class="splash-logo">
+                <div class="splash-logo-glow"></div>
+            </div>
+            <h1 class="splash-title">PROMETHEUS</h1>
+            <p class="splash-prompt">Click or press any key to ignite</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-glow-orb-1"></div>
+            <div class="hero-glow-orb-2"></div>
+            <div class="hero-content">
+                <div class="badge" id="hero-badge">
+                    <span class="badge-dot"></span> Igniting the Future
+                </div>
+                <h1 class="hero-title" id="main-title">PROMETHEUS</h1>
+                <p class="hero-tagline" id="main-tagline">
+                    A collective of creators, builders, and innovators bringing the fire of progress to the digital age.
+                </p>
+                <div class="hero-actions">
+                    <a href="#members" class="btn btn-primary" id="btn-explore-members">Explore Our Team</a>
+                    <a href="#about" class="btn btn-secondary" id="btn-learn-about">Learn Our Story</a>
+                </div>
+            </div>
+            <div class="scroll-indicator" id="scroll-down-arrow">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- Members Section -->
+        <section id="members" class="members-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-subtitle">THE CORE COLLECTIVE</span>
+                    <h2 class="section-title">Meet Prometheus</h2>
+                    <div class="section-line"></div>
+                    <p class="section-desc">
+                        Our diverse team combines vision, engineering, and creative design to create next-generation solutions.
+                    </p>
+                </div>
+                
+                <!-- Members Grid -->
+                <div class="members-grid" id="members-card-grid">
+                    <!-- Cards will be injected dynamically via JS for cleaner code and maintainability, but styled with premium skeleton states if JS is disabled -->
+                    <noscript>
+                        <div class="noscript-warning">Please enable JavaScript to view the team members grid interactively.</div>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-info">
+                        <span class="section-subtitle">OUR MISSION</span>
+                        <h2 class="about-title">The Prometheus Ethos</h2>
+                        <p class="about-text">
+                            Just as the titan Prometheus braved the heavens to bring fire to humanity, we strive to push boundaries, illuminate the dark, and empower builders. We believe that technology should be a tool of liberation, enlightenment, and infinite progress.
+                        </p>
+                        <p class="about-text">
+                            Our collective brings together experts in software architecture, design, artificial intelligence, and media creation. Together, we forge ideas into reality.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">8</span>
+                                <span class="stat-label">Specialists</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-label">Committed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">24/7</span>
+                                <span class="stat-label">Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="visual-card">
+                            <div class="visual-card-glow"></div>
+                            <div class="visual-card-content">
+                                <img src="Pics/Prometheus_LOGO.jpeg" alt="Prometheus Emblem" class="about-emblem-img">
+                                <h3 class="visual-title">Igniting Tomorrow</h3>
+                                <p class="visual-desc">Every line of code, every visual layout, and every architectural choice is driven by a singular goal: excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="Pics/Prometheus_LOGO.jpeg" alt="Prometheus Logo" class="footer-logo">
+                <span class="footer-brand-name">PROMETHEUS</span>
+            </div>
+            <div class="footer-text">
+                &copy; 2026 Prometheus. All rights reserved. Forging future solutions.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Details Modal -->
+    <div class="modal-overlay" id="member-detail-modal" aria-hidden="true" role="dialog">
+        <div class="modal-window">
+            <button class="modal-close-btn" id="modal-close-button" aria-label="Close modal">&times;</button>
+            <div class="modal-body-content" id="modal-body-container">
+                <!-- Modal content will be generated dynamically on card selection -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
