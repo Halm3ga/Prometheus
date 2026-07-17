@@ -8,8 +8,7 @@ const MEMBERS_DATA = [
         name: "Adhityan Sreehari",
         image: "Pics/Adhityan Sreehari.jpeg",
         role: "Team Member",
-        tagline: "Bridging complex neural architectures with real-world applications.",
-        skills: ["Python", "PyTorch", "Deep Learning", "NLP", "Model Optimization"],
+
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -21,8 +20,6 @@ const MEMBERS_DATA = [
         name: "Albert Joy",
         image: "Pics/Albert Joy.jpeg",
         role: "Team Member",
-        tagline: "Engineering robust, highly-scalable backend systems.",
-        skills: ["Java", "Go", "Kubernetes", "System Design", "PostgreSQL"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -34,8 +31,6 @@ const MEMBERS_DATA = [
         name: "Amar",
         image: "Pics/Amar.jpeg",
         role: "Team Member",
-        tagline: "Translating technical complexities into high-impact user value.",
-        skills: ["Agile Delivery", "UX Strategy", "Product Lifecycle", "Analytics", "Business Dev"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -47,8 +42,6 @@ const MEMBERS_DATA = [
         name: "Angela Thoratty",
         image: "Pics/Angela Thoratty.jpeg",
         role: "Team Member",
-        tagline: "Designing interfaces that merge cinematic beauty with intuitive utility.",
-        skills: ["UI/UX Design", "Figma", "Design Systems", "Prototyping", "Brand Strategy"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -60,8 +53,6 @@ const MEMBERS_DATA = [
         name: "Ann Maria Rajeev",
         image: "Pics/Ann Maria Rajeev.jpeg",
         role: "Team Member",
-        tagline: "Sculpting smooth transitions and highly responsive user interfaces.",
-        skills: ["JavaScript", "React", "CSS Grid/Animations", "Web Performance", "Accessibility"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -73,8 +64,6 @@ const MEMBERS_DATA = [
         name: "Anpu Saramsh",
         image: "Pics/Anpu Saramsh.jpeg",
         role: "Captain",
-        tagline: "Designing low-latency connections between hardware and software.",
-        skills: ["C/C++", "IoT", "RTOS", "Firmware", "Microcontrollers"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -86,8 +75,6 @@ const MEMBERS_DATA = [
         name: "Antreena Babu",
         image: "Pics/Antreena Babu.jpeg",
         role: "Vice Captain",
-        tagline: "Scaling infrastructure seamlessly with ironclad security.",
-        skills: ["Terraform", "Docker", "AWS", "CI/CD Pipelines", "Network Security"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -99,8 +86,6 @@ const MEMBERS_DATA = [
         name: "Bagath KR",
         image: "Pics/Bagath KR.jpeg",
         role: "Team Member",
-        tagline: "Unlocking analytical power from large-scale data streams.",
-        skills: ["Apache Spark", "Python", "Big Data", "SQL", "Data Warehousing"],
         socials: {
             github: "https://github.com",
             linkedin: "https://linkedin.com",
@@ -180,7 +165,6 @@ function initMembersGrid() {
                 <div>
                     <span class="member-role">${member.role}</span>
                     <h3 class="member-name">${member.name}</h3>
-                    <p class="member-tagline">${member.tagline}</p>
                 </div>
                 <div class="card-action">
                     <span>View Profile</span>
@@ -191,7 +175,7 @@ function initMembersGrid() {
                 </div>
             </div>
         `;
-        
+
         // Event listeners for trigger modal
         card.addEventListener("click", () => openMemberModal(member.id));
         card.addEventListener("keydown", (e) => {
@@ -231,7 +215,7 @@ function updateTally(memberId, change, displayElement) {
     if (tallyState[memberId] < 0) tallyState[memberId] = 0; // clamp at 0
     saveTallyState();
     displayElement.textContent = tallyState[memberId];
-    
+
     // Trigger visual pop animation
     displayElement.classList.remove("pop");
     void displayElement.offsetWidth; // trigger reflow
@@ -342,7 +326,7 @@ function openMemberModal(memberId) {
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden"; // Freeze main window scrolling
-    
+
     // Focus close button for accessibility
     const closeBtn = document.getElementById("modal-close-button");
     if (closeBtn) closeBtn.focus();
@@ -361,7 +345,7 @@ function closeMemberModal() {
         const card = document.querySelector(`.member-card[data-member-id="${activeModalMemberId}"]`);
         if (card) card.focus();
     }
-    
+
     activeModalMemberId = null;
 }
 
@@ -436,7 +420,7 @@ function initAmbientEmberEffect() {
     // Animation Loop
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         particles.forEach(p => {
             p.update();
             p.draw();
