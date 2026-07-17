@@ -257,8 +257,7 @@ function openMemberModal(memberId) {
 
     activeModalMemberId = memberId;
 
-    // Dynamic Skill Tags creation
-    const skillsHtml = member.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join("");
+
 
     container.innerHTML = `
         <div class="modal-grid">
@@ -269,7 +268,6 @@ function openMemberModal(memberId) {
                 <div class="modal-header-info">
                     <span class="modal-role">${member.role}</span>
                     <h2 class="modal-name">${member.name}</h2>
-                    <p class="modal-tagline">"${member.tagline}"</p>
                 </div>
                 <div class="modal-divider"></div>
                 <div class="modal-bio-section">
@@ -279,10 +277,6 @@ function openMemberModal(memberId) {
                         <span class="tally-value" id="tally-val-display">${tallyState[memberId] || 0}</span>
                         <button class="tally-btn" id="tally-btn-plus" aria-label="Increase Tally">&plus;</button>
                     </div>
-                </div>
-                <div class="modal-skills-section">
-                    <h3 class="modal-section-title">Expertise</h3>
-                    <div class="skills-list">${skillsHtml}</div>
                 </div>
                 <div class="modal-divider"></div>
                 <div class="modal-socials-section">
